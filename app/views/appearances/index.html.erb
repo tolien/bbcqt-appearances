@@ -1,0 +1,23 @@
+<h1>Listing appearances</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @appearances.each do |appearance| %>
+  <tr>
+    <td><%= appearance.date %></td>
+    <td><%= link_to 'Show', appearance %></td>
+    <td><%= link_to 'Edit', edit_appearance_path(appearance) %></td>
+    <td><%= link_to 'Destroy', appearance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Appearance', new_appearance_path %>
