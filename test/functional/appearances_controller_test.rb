@@ -18,7 +18,7 @@ class AppearancesControllerTest < ActionController::TestCase
 
   test "should create appearance" do
     assert_difference('Appearance.count') do
-      post :create, appearance: { date: @appearance.date }
+      post :create, appearance: { date: @appearance.date + 1 }
     end
 
     assert_redirected_to appearance_path(assigns(:appearance))
