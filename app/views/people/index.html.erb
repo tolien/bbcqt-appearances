@@ -3,21 +3,21 @@
 <table>
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
+    <th>Appearances</th>
+    <th>Last Appearance</th>
     <th></th>
   </tr>
 
-<% @people.each do |person| %>
+<% @people.sort_by { |person| person.appearances.size }.reverse.each do |person| %>
   <tr>
     <td><%= person.name %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= person.appearances.count %></td>
+		<% if person.appearances.count > 0 %>
+		<td><%= person.appearances.sort_by(&:date).last.date %>
+		<td><%= link_to 'Details', person %></td>
+		<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Person', new_person_path %>

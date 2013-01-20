@@ -5,6 +5,11 @@
   <%= @appearance.date %>
 </p>
 
+<ul>
+	<% @appearance.people.each do |person| %>
+	<li><%= link_to person.name, person_path(person) %></li>
+	<% end %>
+</ul>
 
 <%= link_to 'Edit', edit_appearance_path(@appearance) %> |
 <%= link_to 'Back', appearances_path %>

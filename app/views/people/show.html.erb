@@ -1,10 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Back', people_path %>
+
 <p>
   <b>Name:</b>
   <%= @person.name %>
 </p>
 
+<p>
+	Appearances: <%= @person.appearances.count %>
+</p>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<ul>
+	<% @person.appearances.sort_by(&:date).reverse.each do |appearance| %>
+	<li>
+		<%= appearance.date %>
+	</li>
+	<% end %>
+</ul>
