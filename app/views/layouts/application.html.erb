@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bbcqt</title>
+  <title>BBC Question Time Appearances</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
+<%= analytics_init if Rails.env.production? %>
 <body>
 
 <%= yield %>
