@@ -7,3 +7,7 @@ before_script:
   - "echo \"Bbcqt::Application.config.secret_token = '$(bundle exec rake secret)'\" > config/initializers/secret_token.rb"
 script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate test
+
+notifications:
+  email:
+    - travis-ci@tolien.co.uk
