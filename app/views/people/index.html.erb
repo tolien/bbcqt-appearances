@@ -7,23 +7,19 @@
     <th>Name</th>
     <th>Appearances</th>
     <th>Last Appearance</th>
-    <th></th>
   </tr>
 
-<% @people.sort_by { |person| person.appearances.size }.reverse.each do |person| %>
+<% @people.each do |person| %>
+<% last_appearance = person.appearances.sort_by(&:date).last %>
 
   <tr>
-    <td><%= person.name %></td>
+    <td><%= link_to person.name, person %></td>
 		<td><%= person.appearances.count %></td>
 		<% if person.appearances.count > 0 %>
-		<td><%= person.appearances.sort_by(&:date).last.date %>
-		<td><%= link_to 'Details', person %></td>
+		<td><%= link_to last_appearance.date, last_appearance %>
 		<% end %>
   </tr>
 <% end %>
 </table>
 
-
-<%= will_paginate @people %>
-
-<br />
+<%= paginate @people %>
