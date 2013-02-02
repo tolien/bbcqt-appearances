@@ -2,8 +2,8 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.paginate page: params[:page], per_page: 10
-
+    @people = Kaminari.paginate_array(Person.all.sort_by { |person| person.appearances.size }.reverse ).page(params[:page]).per(10)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @people }
