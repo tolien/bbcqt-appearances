@@ -112,9 +112,9 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   google-analytics-rails
   jquery-rails
+  kaminari
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
   validates_timeliness (~> 3.0)
-  will_paginate (~> 3.0.0)
