@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+table { padding-bottom: 1em;}
+table td { padding-right: 10em;}
+table th { text-align: left;}
+.pagination { text-align: center; width: 30%;}
