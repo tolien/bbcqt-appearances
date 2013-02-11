@@ -10,12 +10,19 @@
 
 <% @appearances.each do |appearance| %>
   <tr>
-    <td><%= appearance.date %></td>
-    <td><%= link_to 'Show', appearance %></td>
+    <td><%= link_to appearance.date, appearance %></td>
+		<td>
+			<% appearance.people.each do |person| %>
+      <% if person.name != appearance.people.last.name %>
+      <%= link_to person.name, person %>,
+			<% else %>
+      <%= link_to person.name, person %>
+      <% end %>
+    <% end %>
+	</td>
   </tr>
 <% end %>
 </table>
 
-<br />
 
 <%= link_to 'New Appearance', new_appearance_path %>
