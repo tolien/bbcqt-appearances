@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+  skip_before_filter :authenticate_user!, only: [:index, :show]
   # GET /people
   # GET /people.json
   def index
