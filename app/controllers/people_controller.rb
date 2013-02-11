@@ -2,7 +2,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Kaminari.paginate_array(Person.all.sort_by { |person| person.appearances.size }.reverse ).page(params[:page]).per(10)
+    @people = Kaminari.paginate_array(Person.all.sort_by { |person| person.appearances.size }.reverse ).page(params[:page])
     
     respond_to do |format|
       format.html # index.html.erb

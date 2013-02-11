@@ -2,7 +2,7 @@ class AppearancesController < ApplicationController
   # GET /appearances
   # GET /appearances.json
   def index
-    @appearances = Appearance.all
+    @appearances = Appearance.order(:date).reverse_order.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
