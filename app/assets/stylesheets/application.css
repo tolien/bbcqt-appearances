@@ -12,7 +12,7 @@
  *= require_tree .
  */
 
-table { padding-bottom: 1em;}
-table td { padding-right: 10em;}
+table { padding-bottom: 1em; width: 100%;}
+table td:first-child { padding-right: 10em;}
 table th { text-align: left;}
-.pagination { text-align: center; width: 30%;}
+.pagination { text-align: center; width: 50%;}
