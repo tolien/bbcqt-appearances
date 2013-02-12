@@ -2,19 +2,18 @@
 
 <%= link_to 'Back', people_path %>
 
-<p>
-  <b>Name:</b>
+<h1>
   <%= @person.name %>
-</p>
+</h1>
 
 <p>
-	Appearances: <%= @person.appearances.count %>
+	<%= number_to_human( @person.appearances.count) +  " appearance".pluralize(@person.appearances.count) %>:
 </p>
 
 <ul>
 	<% @person.appearances.sort_by(&:date).reverse.each do |appearance| %>
 	<li>
-		<%= appearance.date %>
+		<%= link_to appearance.date, appearance %>
 	</li>
 	<% end %>
 </ul>
