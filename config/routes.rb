@@ -1,6 +1,7 @@
 Bbcqt::Application.routes.draw do
-  resources :people
+  devise_for :users
 
+  resources :people
 
 
   resources :appearances do
